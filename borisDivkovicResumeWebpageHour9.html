@@ -1,0 +1,280 @@
+<!-- In the final hour, I used my time to implement a new palette and added a footer that helps the user get back on top of the page.
+    I've had to readjust paddings and margins, as well as the font size of certain elements because they were misbehaving while testing
+    out the responsiveness one last time. I also had to place the internal css (style tags) into the document head, because the CSS 
+    would only load on Google Chrome for me. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boris Divkovic CV</title>
+    <style>
+        body {
+            background-image: linear-gradient(#1A3850, #142B3D);
+            color: #7BADD4;
+            margin: auto;
+            margin-right: auto;
+            margin-top: 60px;
+        }
+        #upper-section {
+            display: flex;
+            flex-direction: row;
+            border: solid 3px #9D6233;
+            text-align: center;
+            justify-content: center;
+        }
+        #resume-pic {
+            width: 50%;
+            border-style: solid;
+            border-color: #9D6233;
+            height: auto;
+            margin-left: -80px;
+        }
+        #upper-right-div {
+            align-self: center;
+            text-align: center;
+            margin-left: 70px;
+        }
+        .upper-section-text {
+            font-size: 36px;
+            font-family: monospace;
+            font-weight: 600;
+            font-style: italic;
+            color: #9D6233;
+        }
+        #lower-section, #middle-section, #bottom-section {
+            display: flex;
+            flex-direction: column;
+            border: solid 3px #9D6233;
+            border-style: solid;
+            border-width: 3px;
+            border-color: #9D6233;
+            border-top-width: 0px;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: 600;
+            text-align: center;
+        }
+        .underlined-text {
+            color: #9D6233;
+            text-decoration: underline;
+            font-style: italic;
+        }
+        #lower-section-div1, #lower-section-div2, #bottom-section-div1 {
+            border-bottom-width: 3px;
+            border-bottom-style: solid;
+            border-bottom-color: #9D6233;
+        }
+        #bottom-section-div1 {
+            align-items: flex-start;
+        }
+        #bottom-section-div2{
+            font-size: 1.3em;
+        }
+        #bottom-right-section-div-text {
+            font-size: 1.5em;
+        }
+        #bottom-right-section-list {
+            font-size: 1.5em;
+            padding: 0 30px;
+            list-style: none;
+            line-height: normal;
+        }
+        .lower-section-div, #upper-section {
+            padding: 20px 0;
+        }
+        #nav-bar-items li {
+            display: inline-block;
+            padding: 10px 20px 5px 20px;
+            background-color: #9D6233;
+        }
+        a {
+            text-decoration: none;
+            font-family: monospace;
+            color: #7bced4;
+            font-size: 1.7em;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            background-color: transparent;
+            position: fixed;
+            width: 100%;
+            margin-top: -70px;
+        }
+        span {
+            color: #9D6233;
+            font-weight: 700;
+            font-style: italic;
+        }
+        #footer-section {
+            padding: 10px 0 10px 0;
+        }
+        #footer-text, footer {
+            border: solid 2px #9D6233;
+        }
+        #footer-text {
+            padding: 3px 3px;
+        }
+        footer {
+            display: flex;
+            justify-content: center;
+            border-top: 0;
+        }
+    @media only screen and (max-width: 1300px) {
+            #upper-section, #lower-section, #middle-section, #bottom-section {
+            display: flex;
+            flex-direction: column;
+        }
+        #resume-pic {
+            width: 20%;
+            display: block;
+            margin: 0 auto;
+        }
+        #upper-right-div {
+            text-align: center;
+            align-self: center;
+            margin-left: 0;
+        }
+        .upper-section-text {
+            font-size: 1.2em;
+        }
+        #bottom-section-div1, #bottom-section-div2 {
+            display: block;
+            width: auto;
+            height: auto;
+            line-height: 1em;
+        }
+        #lower-section-div1, #lower-section-div2 {
+            display: block;
+            width: auto;
+            height: auto;
+            line-height: 1em;
+        }
+        #lower-section-div3 {
+            display: block;
+            width: auto;
+            height: auto;
+            line-height: 0.2em;
+        }
+        p, h3, .underlined-text, ul, #bottom-right-section-div-text  {
+            font-size: 0.8em;
+        }
+        p {
+            line-height: 0.7em;
+        }
+        #nav-bar-items li {
+            display: inline-block;
+            margin: 2px 0;
+            padding: 0 10px;
+            font-size: 1.3em;
+        }
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        #bottom-right-section-list {
+            font-size: 0.8em;
+        }
+        #bottom-section-div2 {
+            font-size: 1em;
+        }
+        a {
+            font-size: 0.9em;
+        }
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav id="nav-bar">
+            <ul id="nav-bar-items">
+                <li id="first-navbar-item"><a href="#middle-section">Lični podaci</a></li>
+                <li><a href="#lower-section-div1">O meni</a></li>
+                <li><a href="#lower-section-div2">Radno iskustvo</a></li>
+                <li><a href="#lower-section-div3">Edukacija</a></li>
+                <li id="last-navbar-item"><a href="#bottom-section">Hobiji i vozačka dozvola</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="upper-section">
+            <div>
+                <div id="upper-left-div">
+                    <img id="resume-pic"src="https://i.ibb.co/DK97Mfq/BW-pic.png" alt="resume picture"> 
+                </div>
+            </div>
+            <div id="upper-right-div">
+                <h1 class="upper-section-text">Boris Divković</h1>
+                <h2 class="upper-section-text">Tehničar računarstva</h2>
+                <h2 class="upper-section-text">Lični i poslovni rezime</h2>
+            </div> 
+        </section>
+        <section id="middle-section">
+            <div class="lower-section-div">
+                <h1 class="underlined-text"><span>Lični podaci</span></h1>
+                <p><span>Adresa: </span>Ismeta Mujezinovića 49, Tuzla</p>
+                <p><span>E-mail: </span>borisdivkovic191@gmail.com</p>
+                <p><span>Mobilni telefon: </span>387/60-308-9349</p>
+                <p><span>Nacionalnost: </span>bosansko-hercegovačka</p>                
+                <p><span>Datum rođenja: </span>05/09/2002</p>
+                <p><span>Spol: </span>Muški</p>
+            </div>
+        </section>
+        <section id="lower-section">
+            <div class="lower-section-div" id="lower-section-div1">
+                <h1 class="underlined-text"><span>O meni</span></h1>
+                <p style="line-height: 150%">Tehničar računarstva sa završenim srednjoškolskim obrazovanjem, aktivan softverski
+                    inžinjer spreman za rad u mnogim programskim jezicima (C/C++ & C#). Upoznat sa izradom web stranica (HTML & CSS). 
+                    Certificirani energetski savjetnik, diplomirani dizajner baza podataka (srednjoškolska diploma o specijalizaciji), te redovan student
+                    IPI akademije u Tuzli.</p>
+            </div>
+            <div class="lower-section-div" id="lower-section-div2">
+                <h1 class="underlined-text"><span>Radno iskustvo</span></h1>
+                <h3><span>Energetski savjetnik</span></h3>
+                <h3><span> 15/08/2020 – 01/10/2021 </span></h3>
+                <h3><span>Mjesto: </span>Tuzla, BiH</h3>
+                <p><span>Glavne aktivnosti i odgovornosti:</span></p>
+                <p style="line-height: 150%;">Anketiranje potrošnje električne energije mnogobrojnih domaćinstava (130+), te
+                    savjetovanje istih u cilju smanjenja potrošnje električne energije, kao i efikasnije upotrebe
+                    dostupne toplotne energije. Prikupljanje istih informacija od domaćinstava kroz određeni
+                    vremenski period u cilju shvatanja cjelokupnog uticaja implementacije jednostavnijih i
+                    kompleksnijih savjeta za smanjenje potrošnje energije.</p>
+            </div>
+            <div class="lower-section-div" id="lower-section-div3">
+                <h1 class="underlined-text"><span>Edukacija</span></h1>
+                <h3><span>JUMS Elektrotehnička škola Tuzla</span></h3>
+                <h3><span>01/09/2017 – 06/06/2021</span></h3>
+                <h3><span>Struka: </span>Tehničar računarstva</h3>
+                <p style="line-height: 150%;"><span>Područje obrazovanja: </span>Informacijske i komunikacijske tehnologije (IKT) : Razvoj i analiza
+                softvera i aplikacija, dizajn baza podataka i mreža te upravljanje njima.</p>
+            </div>
+        </section>
+        <section id="bottom-section">
+            <div class="lower-section-div" id="bottom-section-div1">
+                <h1 class="underlined-text"><span>Hobiji</span></h1>
+                <ul id="bottom-right-section-list">
+                <li>Kalistenika</li>
+                <li>Opuštajuća muzika</li>
+                <li>Učenje raznih vještina</li>
+                </ul>
+            </div>
+            <div class="lower-section-div" id="bottom-section-div2">
+                <h1 class="underlined-text"><span>Vozačka dozvola</span></h1>
+                <h3 class="bottom-right-section-div-text">B i B1 kategorije<br>[01.11.21]-[08.11.2031]</h3>
+                <p style="line-height: 120%;"></p>  
+            </div>
+        </section>
+    </main>
+    <footer>
+        <section id="footer-section">
+            <a id="footer-text" href="#">Jump to beginning</a>
+        </section>
+    </footer>
+</body>
+</html>
